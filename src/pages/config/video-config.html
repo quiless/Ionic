@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Aplicativo
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-item>
+      <ion-label color="primary" stacked>Tempo de Loop (Segundos)</ion-label>
+      <ion-input type="number" placeholder="Informe o tempo de Loop em segundos" [(ngModel)]="videoConfig.Number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Url API </ion-label>
+      <ion-input type="text" placeholder="Informe a URL de envio" [(ngModel)]="videoConfig.ApiUrl"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Id Vídeo </ion-label>
+      <ion-input type="text" placeholder="Informe o id do vídeo" [(ngModel)]="videoConfig.VideoId"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Video Uri </ion-label>
+      <ion-input 
+        type="text" 
+        class="error" 
+        (tap)='openGallery()'
+        placeholder="Clique para selecionar o video"
+        [(ngModel)]="videoConfig.VideoUri"
+        minlength="7">
+      </ion-input>
+    </ion-item>  
+    <ion-item>
+        <ion-label color="primary" stacked>Adiantar vídeo ao clicar?</ion-label>
+        <ion-toggle [(ngModel)]="videoConfig.AdvanceVideo"></ion-toggle>
+    </ion-item>
+</ion-content>
+
+<ion-footer no-shadow>
+  <ion-toolbar position="bottom">
+      <ion-grid>
+          <ion-row>
+            <ion-col col-12>
+              <button ion-button (click)='saveConfig()'> Salvar </button>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+  </ion-toolbar>
+</ion-footer>

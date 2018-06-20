@@ -1,0 +1,35 @@
+
+<!-- 
+    <ion-item>
+      <ion-label color="primary" stacked>Tempo de Loop (Segundos)</ion-label>
+      <ion-input type="number" placeholder="Informe o tempo de Loop em segundos" [(ngModel)]="videoConfigFrom.NumberFromStorage"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Url API </ion-label>
+      <ion-input type="text" placeholder="Informe a URL de envio" [(ngModel)]="videoConfigFrom.ApiUrlFromStorage"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Url API </ion-label>
+      <ion-input type="text" placeholder="Informe a URL de envio" [(ngModel)]="videoConfigFrom.VideoUriFromStorage"></ion-input>
+    </ion-item>
+ </ion-content> -->
+
+ <ion-content fullscreen>
+    <div class="videoContainer" *ngIf="videoConfigFrom.VideoUriFromStorage != undefined">
+      <video  [autoplay]="true" 
+        (timeupdate)="setCurrentTime($event)" 
+        loop 
+        (click)='updateShowFullVideo();'  
+        [(src)]="videoConfigFrom.VideoUriFromStorage" 
+        type="video/mp4"         
+        ion-long-press
+        [interval]="10000"
+        (onPressEnd)="updateShowFullVideo()">      
+      </video>
+    </div>
+ </ion-content>
+
+
+ 
+
+  

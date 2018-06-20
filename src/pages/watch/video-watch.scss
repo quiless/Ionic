@@ -1,0 +1,47 @@
+page-home {
+    all: none !important;
+}
+
+button {
+    width: 150px;
+}
+
+// #myVideo {
+//     position: fixed;
+//     right: 0 !important;
+//     bottom: -85px !important;
+//     min-width: 360px !important; 
+//     max-width: 360px !important; 
+//     min-height: 865px !important;
+//     max-height: 865px !important;
+// }
+
+ .videoContainer {
+    position:fixed;
+    height:100%;
+    width:150%;
+    overflow: hidden;
+    background:black;
+    display: block;
+    margin: 0 auto;
+ }
+
+ video {
+    max-width: 100%;
+    max-height: 100%;
+ }
+
+ @media screen  and (orientation: landscape){
+     
+    video {
+        position: fixed; 
+    top: 0;
+    left: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+     }
+     background:black;
+     display: block;
+margin: 0 auto;
+ }
